@@ -229,16 +229,27 @@
       .menu-card {
         background: var(--paper);
         border: 1px solid var(--line);
+        border-radius: 12px;
         min-height: 245px;
-        padding: 27px;
+        padding: 28px;
         display: flex;
         flex-direction: column;
+        box-shadow: 0 4px 18px rgba(38, 66, 57, 0.04);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .menu-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(38, 66, 57, 0.1);
       }
       .menu-card h3 {
         font-size: 1.55rem;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 8px;
       }
       .serving-size {
-        margin: 9px 0 0;
+        margin: 6px 0 0;
         color: var(--orange);
         font-size: 0.78rem;
         font-weight: 700;
@@ -256,11 +267,18 @@
         font-weight: 700;
       }
       .menu-card a {
-        font-size: 0.83rem;
+        font-size: 0.85rem;
         font-weight: 700;
-        margin-top: 13px;
-        text-decoration: underline;
-        text-underline-offset: 4px;
+        margin-top: auto;
+        color: var(--orange);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: gap 0.2s ease;
+      }
+      .menu-card a:hover {
+        gap: 8px;
       }
       .menu-card--list {
         min-height: 0;
@@ -273,19 +291,34 @@
         font-size: 0.9rem;
       }
       .dish-list li {
-        padding: 7px 0;
+        padding: 9px 0;
         border-top: 1px solid var(--line);
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
         gap: 12px;
       }
-      .dish-list strong {
+      .dish-list li span {
+        font-weight: 500;
         color: var(--ink);
+      }
+      .dish-list strong {
+        color: var(--forest);
         font-size: 0.78rem;
         font-weight: 700;
         text-align: right;
         white-space: nowrap;
+        background: rgba(229, 184, 91, 0.18);
+        padding: 3px 8px;
+        border-radius: 6px;
+        letter-spacing: 0.01em;
+      }
+      .dish-list strong small {
+        color: var(--orange);
+        font-weight: 700;
+        font-size: 0.7rem;
+        margin-right: 2px;
+        text-transform: uppercase;
       }
       .price-table {
         width: 100%;
@@ -314,6 +347,151 @@
       .price-table td {
         color: var(--ink);
         font-weight: 700;
+      }
+      .menu-cta {
+        margin-top: 28px;
+        background: linear-gradient(135deg, var(--forest), #18342d);
+        color: #fff;
+        border-radius: 12px;
+        padding: 32px 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        box-shadow: 0 4px 18px rgba(38, 66, 57, 0.08);
+      }
+      .menu-cta h3 {
+        color: #fff;
+        margin: 0 0 6px;
+        font-size: 1.45rem;
+      }
+      .menu-cta p {
+        color: #d6e1d9;
+        margin: 0;
+        max-width: 620px;
+        font-size: 0.95rem;
+      }
+      .menu-cta .button {
+        flex-shrink: 0;
+      }
+      .bundle-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      @media (max-width: 1024px) {
+        .bundle-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .bundle-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .bundle-card {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 34px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: 0 4px 20px rgba(38, 66, 57, 0.05);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+      .bundle-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(38, 66, 57, 0.1);
+      }
+      .bundle-card--featured {
+        border: 2px solid var(--orange);
+        background: #fffefb;
+      }
+      .bundle-badge {
+        display: inline-block;
+        align-self: flex-start;
+        background: var(--orange);
+        color: #fff;
+        font-size: 0.74rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+      }
+      .bundle-badge--gold {
+        background: var(--forest);
+      }
+      .bundle-card h3 {
+        font-size: 1.75rem;
+        color: var(--ink);
+        margin: 0 0 10px;
+      }
+      .bundle-price {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+      }
+      .price-amount {
+        font-size: 2.2rem;
+        font-weight: 700;
+        font-family: "Playfair Display", serif;
+        color: var(--orange);
+      }
+      .bundle-price small {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .min-order {
+        display: inline-block;
+        background: rgba(229, 184, 91, 0.2);
+        color: var(--forest);
+        font-size: 0.76rem;
+        font-weight: 700;
+        padding: 3px 9px;
+        border-radius: 6px;
+        margin-left: auto;
+      }
+      .bundle-desc {
+        color: var(--muted);
+        font-size: 0.93rem;
+        margin: 0 0 18px;
+      }
+      .bundle-items {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px;
+        border-top: 1px solid var(--line);
+      }
+      .bundle-items li {
+        padding: 8px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 0.9rem;
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .bundle-addon {
+        background: var(--cream);
+        border: 1px dashed var(--orange);
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-size: 0.85rem;
+        margin-bottom: 22px;
+        color: var(--ink);
+      }
+      .bundle-addon strong {
+        color: var(--orange);
+        display: block;
+        font-size: 0.78rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        margin-bottom: 2px;
       }
       .feature {
         display: grid;
@@ -502,7 +680,7 @@
           >Gloria's Platter<span>Made for gathering</span></a
         >
         <nav>
-          <a href="#menu">Menu</a><a href="#packages">Packages</a
+          <a href="#entrees">Menu</a><a href="#packages">Packages</a
           ><a href="#gallery">Gallery</a
           ><a class="button" href="#order">Start an order</a>
         </nav>
@@ -565,227 +743,317 @@
       <section class="wrap entrees" id="entrees">
         <div class="section-top">
           <div>
-            <span class="eyebrow">Sri Lankan | South Indian</span>
-            <h2>Main Entrées</h2>
+            <span class="eyebrow">Sri Lankan &amp; South Indian</span>
+            <h2>Main Entrées &amp; Curries</h2>
           </div>
-          <p>Explore signature dishes for your next gathering.</p>
+          <p>Generous rice, roti, hoppers, slow-simmered curries, and devilled dishes for your gathering.</p>
         </div>
         <div class="menu-grid">
           <article class="menu-card menu-card--list">
+            <h3>🥖 Bases &amp; Breads</h3>
             <p class="serving-size">
               Small: serves 1–2 · Medium: 3–4 · Large: 5–6
             </p>
             <ul class="dish-list">
-              <li><span>Coconut Roti</span><strong>$10 / $15 / $20</strong></li>
+              <li><span>Coconut Roti</span><strong><small>S</small>$10 · <small>M</small>$15 · <small>L</small>$20</strong></li>
               <li>
-                <span>String Hoppers</span><strong>$15 / $25 / $30</strong>
+                <span>String Hoppers</span><strong><small>S</small>$15 · <small>M</small>$25 · <small>L</small>$30</strong>
               </li>
-              <li><span>Pittu</span><strong>$10 / $16 / $21</strong></li>
-              <li><span>Ravadosa</span><strong>$10 / $15 / $20</strong></li>
-              <li><span>Fried Rice</span><strong>$12 / $18 / $22</strong></li>
-              <li><span>Noodles</span><strong>$12 / $18 / $22</strong></li>
+              <li><span>Pittu</span><strong><small>S</small>$10 · <small>M</small>$16 · <small>L</small>$21</strong></li>
+              <li><span>Ravadosa</span><strong><small>S</small>$10 · <small>M</small>$15 · <small>L</small>$20</strong></li>
+              <li><span>Fried Rice</span><strong><small>S</small>$12 · <small>M</small>$18 · <small>L</small>$22</strong></li>
+              <li><span>Noodles</span><strong><small>S</small>$12 · <small>M</small>$18 · <small>L</small>$22</strong></li>
               <li>
-                <span>Coconut Milk Rice</span><strong>$8 / $14 / $21</strong>
+                <span>Coconut Milk Rice</span><strong><small>S</small>$8 · <small>M</small>$14 · <small>L</small>$21</strong>
               </li>
-           
-            <li><span>Paratta Koththu</span></li>
-            <table class="price-table">
-              <thead>
-                <tr>
-                  <th scope="col">Choice</th>
-                  <th scope="col">Small</th>
-                  <th scope="col">Medium</th>
-                  <th scope="col">Large</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Chicken</td>
-                  <td>$16</td>
-                  <td>$22</td>
-                  <td>$28</td>
-                </tr>
-                <tr>
-                  <td>Beef</td>
-                  <td>$17</td>
-                  <td>$23</td>
-                  <td>$30</td>
-                </tr>
-                <tr>
-                  <td>Seafood</td>
-                  <td>$17</td>
-                  <td>$23</td>
-                  <td>$30</td>
-                </tr>
-              </tbody>
-            </table>
-            
+              <li><span>Chicken Paratta Koththu</span><strong><small>S</small>$16 · <small>M</small>$22 · <small>L</small>$28</strong></li>
+              <li><span>Beef Paratta Koththu</span><strong><small>S</small>$17 · <small>M</small>$23 · <small>L</small>$30</strong></li>
+              <li><span>Seafood Paratta Koththu</span><strong><small>S</small>$17 · <small>M</small>$23 · <small>L</small>$30</strong></li>
+            </ul>
           </article>
-          </div>
-          </section>
-          
-          </ul>
-          </div>
+          <article class="menu-card menu-card--list">
+            <h3>🥘 Slow-Simmered Curries</h3>
+            <p class="serving-size">
+              Small: serves 1–2 · Medium: 3–4 · Large: 5–6
+            </p>
+            <ul class="dish-list">
+              <li>
+                <span>Chicken curry</span><strong><small>S</small>$10 · <small>M</small>$16 · <small>L</small>$21</strong>
+              </li>
+              <li><span>Beef curry</span><strong><small>S</small>$12 · <small>M</small>$18 · <small>L</small>$24</strong></li>
+              <li><span>Lamb curry</span><strong><small>S</small>$15 · <small>M</small>$22 · <small>L</small>$27</strong></li>
+              <li><span>Goat curry</span><strong><small>S</small>$15 · <small>M</small>$22 · <small>L</small>$27</strong></li>
+              <li>
+                <span>Porkbelly curry</span><strong><small>S</small>$15 · <small>M</small>$22 · <small>L</small>$27</strong>
+              </li>
+              <li><span>Fish curry</span><strong><small>S</small>$10 · <small>M</small>$16 · <small>L</small>$21</strong></li>
+              <li><span>Shrimp curry</span><strong><small>S</small>$12 · <small>M</small>$18 · <small>L</small>$24</strong></li>
+              <li>
+                <span>Squid / cuttlefish curry</span
+                ><strong><small>S</small>$12 · <small>M</small>$18 · <small>L</small>$24</strong>
+              </li>
+            </ul>
+          </article>
+          <article class="menu-card menu-card--list">
+            <h3>🌶️ Devilled Dishes</h3>
+            <p class="serving-size">
+              Small: serves 1–2 · Medium: 3–4 · Large: 5–6
+            </p>
+            <ul class="dish-list">
+              <li>
+                <span>Devilled chicken</span><strong><small>S</small>$11 · <small>M</small>$17 · <small>L</small>$22</strong>
+              </li>
+              <li>
+                <span>Devilled beef</span><strong><small>S</small>$13 · <small>M</small>$19 · <small>L</small>$25</strong>
+              </li>
+              <li>
+                <span>Devilled lamb</span><strong><small>S</small>$16 · <small>M</small>$23 · <small>L</small>$28</strong>
+              </li>
+              <li>
+                <span>Devilled porkbelly</span><strong><small>S</small>$16 · <small>M</small>$23 · <small>L</small>$28</strong>
+              </li>
+              <li>
+                <span>Devilled shrimp</span><strong><small>S</small>$13 · <small>M</small>$19 · <small>L</small>$25</strong>
+              </li>
+            </ul>
+          </article>
         </div>
       </section>
       <section class="wrap" id="menu">
         <div class="section-top">
           <div>
-            <h2>Side Dishes</h2>
+            <span class="eyebrow">Sides &amp; Accompaniments</span>
+            <h2>Sides, Short Eats &amp; Sweets</h2>
           </div>
           <p>
-            From slow-simmered curries to beloved short eats and sweets,
-            Gloria's Platter brings the flavors of Sri Lanka to your gathering.
+            Complement your meal with freshly stir-fried veggies, authentic sambals, handmade short eats, and traditional Sri Lankan desserts.
           </p>
         </div>
         <div class="menu-grid">
           <article class="menu-card menu-card--list">
-            <h3>Curries</h3>
-            <p class="serving-size">
-              Small: serves 1–2 · Medium: 3–4 · Large: 5–6
-            </p>
-            <ul class="dish-list">
-              <li>
-                <span>Chicken curry</span><strong>$10 / $16 / $21</strong>
-              </li>
-              <li><span>Beef curry</span><strong>$12 / $18 / $24</strong></li>
-              <li><span>Lamb curry</span><strong>$15 / $22 / $27</strong></li>
-              <li><span>Goat curry</span><strong>$15 / $22 / $27</strong></li>
-              <li>
-                <span>Porkbelly curry</span><strong>$15 / $22 / $27</strong>
-              </li>
-              <li><span>Fish curry</span><strong>$10 / $16 / $21</strong></li>
-              <li><span>Shrimp curry</span><strong>$12 / $18 / $24</strong></li>
-              <li>
-                <span>Squid / cuttlefish curry</span
-                ><strong>$12 / $18 / $24</strong>
-              </li>
-            </ul>
-          </article>
-          <article class="menu-card menu-card--list">
-            <h3>Sides &amp; sambals</h3>
+            <h3>🥗 Sides &amp; Sambals</h3>
             <p class="serving-size">
               Available in ½ cup, 1 cup, or 1½ cup portions
             </p>
             <ul class="dish-list">
               <li>
-                <span>Stir-fried potatoes</span><strong>$6 / $11 / $16</strong>
+                <span>Stir-fried potatoes</span><strong><small>½c</small>$6 · <small>1c</small>$11 · <small>1.5c</small>$16</strong>
               </li>
               <li>
                 <span>Stir-fried green beans</span
-                ><strong>$6 / $11 / $16</strong>
+                ><strong><small>½c</small>$6 · <small>1c</small>$11 · <small>1.5c</small>$16</strong>
               </li>
-              <li><span>Dahl curry</span><strong>$5 / $10 / $15</strong></li>
+              <li><span>Dahl curry</span><strong><small>½c</small>$5 · <small>1c</small>$10 · <small>1.5c</small>$15</strong></li>
               <li>
-                <span>White potato curry</span><strong>$6 / $11 / $16</strong>
+                <span>White potato curry</span><strong><small>½c</small>$6 · <small>1c</small>$11 · <small>1.5c</small>$16</strong>
               </li>
               <li>
-                <span>Coconut sambal</span><strong>$5 / $10 / $15</strong>
+                <span>Coconut sambal</span><strong><small>½c</small>$5 · <small>1c</small>$10 · <small>1.5c</small>$15</strong>
               </li>
-              <li><span>Onion sambal</span><strong>$5 / $10 / $15</strong></li>
+              <li><span>Onion sambal</span><strong><small>½c</small>$5 · <small>1c</small>$10 · <small>1.5c</small>$15</strong></li>
               <li>
-                <span>Pineapple sambal</span><strong>$5 / $10 / $15</strong>
+                <span>Pineapple sambal</span><strong><small>½c</small>$5 · <small>1c</small>$10 · <small>1.5c</small>$15</strong>
               </li>
             </ul>
           </article>
           <article class="menu-card menu-card--list">
-            <h3>Devilled dishes</h3>
-            <p class="serving-size">
-              Small: serves 1–2 · Medium: 3–4 · Large: 5–6
-            </p>
-            <ul class="dish-list">
-              <li>
-                <span>Devilled chicken</span><strong>$11 / $17 / $22</strong>
-              </li>
-              <li>
-                <span>Devilled beef</span><strong>$13 / $19 / $25</strong>
-              </li>
-              <li>
-                <span>Devilled lamb</span><strong>$16 / $23 / $28</strong>
-              </li>
-              <li>
-                <span>Devilled porkbelly</span><strong>$16 / $23 / $28</strong>
-              </li>
-              <li>
-                <span>Devilled shrimp</span><strong>$13 / $19 / $25</strong>
-              </li>
-            </ul>
-          </article>
-          <article class="menu-card menu-card--list">
-            <h3>Cutlets &amp; rolls</h3>
+            <h3>🥟 Short Eats (Cutlets &amp; Rolls)</h3>
             <p class="serving-size">
               15-piece minimum · Add in increments of 5
             </p>
             <ul class="dish-list">
               <li>
-                <span>Fish cutlets</span><strong>15: $16 · +5: $5</strong>
+                <span>Fish cutlets</span><strong><small>15</small>$16 · <small>+5</small>$5</strong>
               </li>
               <li>
-                <span>Vegetable cutlets</span><strong>15: $15 · +5: $4</strong>
+                <span>Vegetable cutlets</span><strong><small>15</small>$15 · <small>+5</small>$4</strong>
               </li>
               <li>
-                <span>Chicken cutlets</span><strong>15: $16 · +5: $5</strong>
+                <span>Chicken cutlets</span><strong><small>15</small>$16 · <small>+5</small>$5</strong>
               </li>
-              <li><span>Egg rolls</span><strong>15: $20 · +5: $7</strong></li>
+              <li><span>Egg rolls</span><strong><small>15</small>$20 · <small>+5</small>$7</strong></li>
               <li>
-                <span>Vegetable rolls</span><strong>15: $15 · +5: $4</strong>
+                <span>Vegetable rolls</span><strong><small>15</small>$15 · <small>+5</small>$4</strong>
               </li>
-              <li><span>Fish rolls</span><strong>15: $21 · +5: $7</strong></li>
-              <li><span>Beef rolls</span><strong>15: $23 · +5: $8</strong></li>
+              <li><span>Fish rolls</span><strong><small>15</small>$21 · <small>+5</small>$7</strong></li>
+              <li><span>Beef rolls</span><strong><small>15</small>$23 · <small>+5</small>$8</strong></li>
             </ul>
           </article>
           <article class="menu-card menu-card--list">
-            <h3>Sweets &amp; cakes</h3>
+            <h3>🍰 Sweets &amp; Cakes</h3>
             <p class="serving-size">
               Available in ½ lb, 1 lb, or 2 lb portions
             </p>
             <ul class="dish-list">
-              <li><span>Watalappan</span><strong>$20 / $30 / $40</strong></li>
-              <li><span>Milk toffee</span><strong>$20 / $31 / $42</strong></li>
+              <li><span>Watalappan</span><strong><small>½lb</small>$20 · <small>1lb</small>$30 · <small>2lb</small>$40</strong></li>
+              <li><span>Milk toffee</span><strong><small>½lb</small>$20 · <small>1lb</small>$31 · <small>2lb</small>$42</strong></li>
               <li>
-                <span>Coconut toffee</span><strong>$21 / $31 / $42</strong>
+                <span>Coconut toffee</span><strong><small>½lb</small>$21 · <small>1lb</small>$31 · <small>2lb</small>$42</strong>
               </li>
               <li>
-                <span>Potato toffee</span><strong>$20 / $31 / $42</strong>
+                <span>Potato toffee</span><strong><small>½lb</small>$20 · <small>1lb</small>$31 · <small>2lb</small>$42</strong>
               </li>
               <li>
-                <span>Pineapple toffee</span><strong>$20 / $31 / $42</strong>
+                <span>Pineapple toffee</span><strong><small>½lb</small>$20 · <small>1lb</small>$31 · <small>2lb</small>$42</strong>
               </li>
               <li>
                 <span>Fruit &amp; nut cake</span
-                ><strong>$25 / $32 / $42</strong>
+                ><strong><small>½lb</small>$25 · <small>1lb</small>$32 · <small>2lb</small>$42</strong>
               </li>
-              <li><span>Date cake</span><strong>$10 / $16 / $25</strong></li>
-              <li><span>Love cake</span><strong>$20 / $30 / $40</strong></li>
+              <li><span>Date cake</span><strong><small>½lb</small>$10 · <small>1lb</small>$16 · <small>2lb</small>$25</strong></li>
+              <li><span>Love cake</span><strong><small>½lb</small>$20 · <small>1lb</small>$30 · <small>2lb</small>$40</strong></li>
             </ul>
           </article>
-          <article class="menu-card menu-card--list">
-            <h3>Planning an event?</h3>
+        </div>
+        <div class="menu-cta">
+          <div>
+            <h3>Planning a custom celebration or large event?</h3>
             <p>
-              Tell us your date, guest count, and the dishes you have in mind.
-              Gloria can help create a spread for your celebration.
+              Tell us your date, guest count, and preferred menu selections. Gloria will work with you to curate a personalized spread for your guests.
             </p>
-            <a href="#order">Start your order →</a>
-          </article>
+          </div>
+          <a class="button button--light" href="#order">Start your custom order →</a>
         </div>
       </section>
-      <section class="feature" id="packages">
-        <div
-          class="feature-image"
-          role="img"
-          aria-label="Colorful freshly prepared food"
-        ></div>
-        <div class="feature-copy">
-          <span class="eyebrow">A crowd favorite</span>
-          <h2>The birthday table, handled.</h2>
-          <p>
-            Our Celebration Package feeds 20 people with a crowd-pleasing
-            entrée, two sides, salad, dessert, and all serving essentials.
-          </p>
-          <div class="package-total">
-            <b>$520 total</b><br />Serves 20 guests · $26 per person
+      <section class="wrap packages-section" id="packages">
+        <div class="section-top">
+          <div>
+            <span class="eyebrow">Individual Meals &amp; Catering Bundles</span>
+            <h2>Meal Packets &amp; Packages</h2>
           </div>
-          <a class="button" href="#order">Ask about this package</a>
+          <p>
+            Convenient, complete meal sets for personal dining or full celebration spreads ($19 each, minimum order 3 meals).
+          </p>
+        </div>
+        <div class="bundle-grid">
+          <!-- Meal 1: Rice & Curry Packet -->
+          <article class="bundle-card bundle-card--featured">
+            <span class="bundle-badge">🍱 Individual Meal Box</span>
+            <h3>Rice &amp; Curry Packet</h3>
+            <div class="bundle-price">
+              <span class="price-amount">$19</span> <small>/ packet</small>
+              <span class="min-order">Min. order: 3 packets</span>
+            </div>
+            <p class="bundle-desc">A complete traditional Sri Lankan rice &amp; curry meal packed fresh in generous boxes.</p>
+            <ul class="bundle-items">
+              <li>🍚 Steamed White Rice</li>
+              <li>🍛 Dhal Curry &amp; Sautéed Potatoes</li>
+              <li>🫛 Stir-Fried Green Beans</li>
+              <li>🧅 Onion Sambal</li>
+              <li>🥭 Mango or Pineapple Curry</li>
+              <li>🥚 Choice of Boiled Egg or Extra Veg Side</li>
+            </ul>
+            <div class="bundle-addon">
+              <strong>Protein Upgrade Option:</strong>
+              <span>+$3 for Fish Curry or Devilled Chicken</span>
+            </div>
+            <a class="button" href="https://wa.me/15551234567?text=Hi%20Gloria!%20I%27d%20like%20to%20order%20Rice%20%26%20Curry%20Packets." target="_blank" rel="noreferrer">Order Rice &amp; Curry Packets</a>
+          </article>
+
+          <!-- Meal 2: Coconut Milk Rice Meal -->
+          <article class="bundle-card">
+            <span class="bundle-badge">🥥 Meal Set</span>
+            <h3>Coconut Milk Rice Meal</h3>
+            <div class="bundle-price">
+              <span class="price-amount">$19</span> <small>/ meal</small>
+              <span class="min-order">Min. order: 3 meals</span>
+            </div>
+            <p class="bundle-desc">Traditional Kiribath paired with savory sambal and flavorful sides.</p>
+            <ul class="bundle-items">
+              <li>🍚 3 pieces Coconut Milk Rice</li>
+              <li>🧅 Flavorful Onion Sambal</li>
+            </ul>
+            <div class="bundle-addon">
+              <strong>Protein Upgrade Option:</strong>
+              <span>+$3 for Fish Curry or Devilled Chicken</span>
+            </div>
+            <a class="button button--light" href="https://wa.me/15551234567?text=Hi%20Gloria!%20I%27d%20like%20to%20order%20Coconut%20Milk%20Rice%20Meals." target="_blank" rel="noreferrer">Order Coconut Milk Rice Meal</a>
+          </article>
+
+          <!-- Meal 3: Coconut Roti Meal -->
+          <article class="bundle-card">
+            <span class="bundle-badge">🫓 Meal Set</span>
+            <h3>Coconut Roti Meal</h3>
+            <div class="bundle-price">
+              <span class="price-amount">$19</span> <small>/ meal</small>
+              <span class="min-order">Min. order: 3 meals</span>
+            </div>
+            <p class="bundle-desc">Warm, handmade coconut rotis served with authentic sambal and sides.</p>
+            <ul class="bundle-items">
+              <li>🫓 4 small Coconut Rotis</li>
+              <li>🧅 Flavorful Onion Sambal</li>
+            </ul>
+            <div class="bundle-addon">
+              <strong>Protein Upgrade Option:</strong>
+              <span>+$3 for Fish Curry or Devilled Chicken</span>
+            </div>
+            <a class="button button--light" href="https://wa.me/15551234567?text=Hi%20Gloria!%20I%27d%20like%20to%20order%20Coconut%20Roti%20Meals." target="_blank" rel="noreferrer">Order Roti Meal</a>
+          </article>
+
+          <!-- Meal 4: Noodles Meal (Feeds 2) -->
+          <article class="bundle-card">
+            <span class="bundle-badge">🍜 Feeds 2 People</span>
+            <h3>Vegetable Noodles Meal</h3>
+            <div class="bundle-price">
+              <span class="price-amount">$19</span> <small>/ meal set</small>
+              <span class="min-order">Min. order: 3 meals</span>
+            </div>
+            <p class="bundle-desc">Generous double-portion stir-fried vegetable noodles served with spicy pepper sambal.</p>
+            <ul class="bundle-items">
+              <li>🍜 1 Large Portion (Feeds 2 People) Veggie Noodles</li>
+              <li>🌶️ Black Pepper Onion Sambal</li>
+            </ul>
+            <div class="bundle-addon">
+              <strong>Protein Upgrade Option:</strong>
+              <span>+$3 for Fish Curry or Devilled Chicken</span>
+            </div>
+            <a class="button button--light" href="https://wa.me/15551234567?text=Hi%20Gloria!%20I%27d%20like%20to%20order%20Noodles%20Meals." target="_blank" rel="noreferrer">Order Noodles Meal</a>
+          </article>
+
+          <!-- Meal 5: String Hopper Meal -->
+          <article class="bundle-card">
+            <span class="bundle-badge">🕸️ Meal Set</span>
+            <h3>String Hopper Meal</h3>
+            <div class="bundle-price">
+              <span class="price-amount">$19</span> <small>/ meal</small>
+              <span class="min-order">Min. order: 3 meals</span>
+            </div>
+            <p class="bundle-desc">Delicate steamed string hoppers with aromatic coconut gravy and sweet-spicy sambal.</p>
+            <ul class="bundle-items">
+              <li>🕸️ 20 Steamed String Hoppers</li>
+              <li>🥥 Kiri Hodi (Coconut Milk Gravy)</li>
+              <li>🧅 Seeni Sambal (Sweet &amp; Spicy Onion)</li>
+            </ul>
+            <div class="bundle-addon">
+              <strong>Protein Upgrade Option:</strong>
+              <span>+$3 for Fish Curry or Devilled Chicken</span>
+            </div>
+            <a class="button button--light" href="https://wa.me/15551234567?text=Hi%20Gloria!%20I%27d%20like%20to%20order%20String%20Hopper%20Meals." target="_blank" rel="noreferrer">Order String Hopper Meal</a>
+          </article>
+
+          <!-- Meal 6: Celebration Feast (20 Guests) -->
+          <article class="bundle-card">
+            <span class="bundle-badge bundle-badge--gold">🎉 Party Spread</span>
+            <h3>The Celebration Feast</h3>
+            <div class="bundle-price">
+              <span class="price-amount">$520</span> <small>total</small>
+              <span class="min-order">Serves 20 guests (~$26/person)</span>
+            </div>
+            <p class="bundle-desc">The ultimate celebration spread handled from scratch for birthdays, family gatherings, and holidays.</p>
+            <ul class="bundle-items">
+              <li>🌾 Yellow Rice or Special Fried Rice</li>
+              <li>🍗 Choice of 2 Main Curries (Chicken / Beef / Pork)</li>
+              <li>🍤 Devilled Shrimp Platter</li>
+              <li>🥗 Dhal Curry, Green Beans &amp; 2 Sambals</li>
+              <li>🥟 20 Short Eats (Cutlets &amp; Rolls)</li>
+              <li>🍮 Watalappan Dessert Tray</li>
+            </ul>
+            <div class="bundle-addon" style="border-color: var(--line); background: var(--paper);">
+              <strong>Custom Event Request:</strong>
+              <span>Tailored dishes and guest count available upon request</span>
+            </div>
+            <a class="button button--light" href="https://wa.me/15551234567?text=Hi%20Gloria!%20I%27d%20like%20to%20inquire%20about%20The%20Celebration%20Feast%20Package." target="_blank" rel="noreferrer">Inquire About Party Package</a>
+          </article>
         </div>
       </section>
       <section class="wrap" id="gallery">
