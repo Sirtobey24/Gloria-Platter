@@ -189,6 +189,16 @@
         color: var(--ink);
         font-size: 0.76rem;
       }
+      .step-icon,
+      .policy-icon {
+        width: 15px;
+        height: 15px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+      }
       section {
         padding: 92px 0;
       }
@@ -213,6 +223,9 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 18px;
       }
+      .entrees {
+        padding: 62px 0 0;
+      }
       .menu-card {
         background: var(--paper);
         border: 1px solid var(--line);
@@ -223,6 +236,13 @@
       }
       .menu-card h3 {
         font-size: 1.55rem;
+      }
+      .serving-size {
+        margin: 9px 0 0;
+        color: var(--orange);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
       }
       .menu-card p {
         color: var(--muted);
@@ -241,6 +261,59 @@
         margin-top: 13px;
         text-decoration: underline;
         text-underline-offset: 4px;
+      }
+      .menu-card--list {
+        min-height: 0;
+      }
+      .dish-list {
+        list-style: none;
+        padding: 0;
+        margin: 16px 0 6px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .dish-list li {
+        padding: 7px 0;
+        border-top: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 12px;
+      }
+      .dish-list strong {
+        color: var(--ink);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-align: right;
+        white-space: nowrap;
+      }
+      .price-table {
+        width: 100%;
+        margin-top: 18px;
+        border-collapse: collapse;
+        font-size: 0.84rem;
+      }
+      .price-table th,
+      .price-table td {
+        padding: 10px 6px;
+        border-top: 1px solid var(--line);
+        text-align: right;
+      }
+      .price-table th:first-child,
+      .price-table td:first-child {
+        padding-left: 0;
+        text-align: left;
+      }
+      .price-table th {
+        color: var(--muted);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+      .price-table td {
+        color: var(--ink);
+        font-weight: 700;
       }
       .feature {
         display: grid;
@@ -307,6 +380,30 @@
         max-width: 520px;
         margin: 0 auto 27px;
       }
+      .order-policies {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        max-width: 900px;
+        margin: 0 auto 30px;
+        text-align: left;
+      }
+      .order-policy {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 17px;
+        color: #d6e1d9;
+        font-size: 0.84rem;
+      }
+      .order-policy strong {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 5px;
+        color: var(--gold);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
       .order-actions {
         display: flex;
         justify-content: center;
@@ -320,6 +417,14 @@
       }
       .button--venmo:hover {
         background: #0075d1;
+      }
+      .button--zelle {
+        background: #6d1ed4;
+        border-color: #6d1ed4;
+        color: #fff;
+      }
+      .button--zelle:hover {
+        background: #5817ad;
       }
       .order-note {
         display: block;
@@ -354,7 +459,8 @@
           gap: 20px;
         }
         .steps,
-        .menu-grid {
+        .menu-grid,
+        .order-policies {
           grid-template-columns: 1fr;
         }
         .section-top {
@@ -426,54 +532,247 @@
         <strong>Ordering is easy, personal, and always delicious.</strong>
         <div class="steps">
           <div class="step">
-            <b>1</b><span>Pick your menu items or package.</span>
+            <b
+              ><svg class="step-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M3 2v7a4 4 0 0 0 8 0V2M7 2v20M18 2v8M18 14v8M18 10a3 3 0 0 0 3-3V2h-3"
+                /></svg></b
+            ><span>Pick your menu items or package.</span>
           </div>
           <div class="step">
-            <b>2</b><span>Message us with your date and guest count.</span>
+            <b
+              ><svg class="step-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.6 9.6 0 0 1-4-.9L3 21l1.7-4A8.6 8.6 0 0 1 3 12.5a8.5 8.5 0 0 1 9-8.5 8.5 8.5 0 0 1 9 7.5Z"
+                /></svg></b
+            ><span
+              >Message us with your date and guest count at least 5 days in
+              advance.</span
+            >
           </div>
           <div class="step">
-            <b>3</b><span>We confirm, then you pay via Venmo.</span>
+            <b
+              ><svg class="step-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 10h18M7 15h3" /></svg></b
+            ><span
+              >We confirm availability, then full payment secures your
+              order.</span
+            >
           </div>
         </div>
       </div>
+      <section class="wrap entrees" id="entrees">
+        <div class="section-top">
+          <div>
+            <span class="eyebrow">More to share</span>
+            <h2>Main Entrées</h2>
+          </div>
+          <p>Explore additional signature dishes for your next gathering.</p>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card menu-card--list">
+            <p class="serving-size">
+              Small: serves 1–2 · Medium: 3–4 · Large: 5–6
+            </p>
+            <ul class="dish-list">
+              <li><span>Coconut Roti</span><strong>$10 / $16 / $21</strong></li>
+              <li>
+                <span>String Hoppers</span><strong>$12 / $18 / $24</strong>
+              </li>
+              <li><span>Pittu</span><strong>$15 / $22 / $27</strong></li>
+              <li><span>Ravadosa</span><strong>$15 / $22 / $27</strong></li>
+              <li><span>Fried Rice</span><strong>$10 / $16 / $21</strong></li>
+              <li><span>Noodles</span><strong>$12 / $18 / $24</strong></li>
+              <li>
+                <span>Squid / cuttlefish curry</span
+                ><strong>$12 / $18 / $24</strong>
+              </li>
+           
+            <li><span>Paratta Koththu</span></li>
+            <table class="price-table">
+              <thead>
+                <tr>
+                  <th scope="col">Choice</th>
+                  <th scope="col">Small</th>
+                  <th scope="col">Medium</th>
+                  <th scope="col">Large</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Chicken</td>
+                  <td>$15</td>
+                  <td>$22</td>
+                  <td>$27</td>
+                </tr>
+                <tr>
+                  <td>Beef</td>
+                  <td>$15</td>
+                  <td>$22</td>
+                  <td>$27</td>
+                </tr>
+                <tr>
+                  <td>Seafood</td>
+                  <td>$15</td>
+                  <td>$22</td>
+                  <td>$27</td>
+                </tr>
+              </tbody>
+            </table>
+            <li>
+              <span>String Hoppers</span><strong>$12 / $18 / $24</strong>
+            </li>
+            <li>
+              <span>Coconut Milk Rice</span><strong>$12 / $18 / $24</strong>
+            </li>
+          </article>
+          </div>
+          </section>
+          
+          </ul>
+          </div>
+        </div>
+      </section>
       <section class="wrap" id="menu">
         <div class="section-top">
           <div>
-            <span class="eyebrow">The favorites</span>
-            <h2>A menu for a full table.</h2>
+            <span class="eyebrow">Sri Lankan catering</span>
+            <h2>A table made for sharing.</h2>
           </div>
           <p>
-            Every price is upfront. Have an idea that isn't here? We love
-            creating a custom spread.
+            From slow-simmered curries to beloved short eats and sweets,
+            Gloria's Platter brings the flavors of Sri Lanka to your gathering.
           </p>
         </div>
         <div class="menu-grid">
-          <article class="menu-card">
-            <h3>Sunday Supper</h3>
-            <p>
-              Herb-roasted chicken, creamy macaroni &amp; cheese, green beans,
-              and dinner rolls.
+          <article class="menu-card menu-card--list">
+            <h3>Curries</h3>
+            <p class="serving-size">
+              Small: serves 1–2 · Medium: 3–4 · Large: 5–6
             </p>
-            <span class="price">$24 per person · 10 guest minimum</span
-            ><a href="#order">Order this menu →</a>
+            <ul class="dish-list">
+              <li>
+                <span>Chicken curry</span><strong>$10 / $16 / $21</strong>
+              </li>
+              <li><span>Beef curry</span><strong>$12 / $18 / $24</strong></li>
+              <li><span>Lamb curry</span><strong>$15 / $22 / $27</strong></li>
+              <li><span>Goat curry</span><strong>$15 / $22 / $27</strong></li>
+              <li>
+                <span>Porkbelly curry</span><strong>$15 / $22 / $27</strong>
+              </li>
+              <li><span>Fish curry</span><strong>$10 / $16 / $21</strong></li>
+              <li><span>Shrimp curry</span><strong>$12 / $18 / $24</strong></li>
+              <li>
+                <span>Squid / cuttlefish curry</span
+                ><strong>$12 / $18 / $24</strong>
+              </li>
+            </ul>
           </article>
-          <article class="menu-card">
-            <h3>Island Feast</h3>
-            <p>
-              Jerk chicken, coconut rice &amp; peas, sweet plantains, and citrus
-              slaw.
+          <article class="menu-card menu-card--list">
+            <h3>Sides &amp; sambals</h3>
+            <p class="serving-size">
+              Available in ½ cup, 1 cup, or 1½ cup portions
             </p>
-            <span class="price">$27 per person · 10 guest minimum</span
-            ><a href="#order">Order this menu →</a>
+            <ul class="dish-list">
+              <li>
+                <span>Stir-fried potatoes</span><strong>$6 / $11 / $16</strong>
+              </li>
+              <li>
+                <span>Stir-fried green beans</span
+                ><strong>$6 / $11 / $16</strong>
+              </li>
+              <li><span>Dahl curry</span><strong>$5 / $10 / $15</strong></li>
+              <li>
+                <span>White potato curry</span><strong>$6 / $11 / $16</strong>
+              </li>
+              <li>
+                <span>Coconut sambal</span><strong>$5 / $10 / $15</strong>
+              </li>
+              <li><span>Onion sambal</span><strong>$5 / $10 / $15</strong></li>
+              <li>
+                <span>Pineapple sambal</span><strong>$5 / $10 / $15</strong>
+              </li>
+            </ul>
           </article>
-          <article class="menu-card">
-            <h3>Garden Table</h3>
-            <p>
-              Grilled vegetables, herbed couscous, fresh salad, hummus, and
-              pita.
+          <article class="menu-card menu-card--list">
+            <h3>Devilled dishes</h3>
+            <p class="serving-size">
+              Small: serves 1–2 · Medium: 3–4 · Large: 5–6
             </p>
-            <span class="price">$20 per person · 10 guest minimum</span
-            ><a href="#order">Order this menu →</a>
+            <ul class="dish-list">
+              <li>
+                <span>Devilled chicken</span><strong>$11 / $17 / $22</strong>
+              </li>
+              <li>
+                <span>Devilled beef</span><strong>$13 / $19 / $25</strong>
+              </li>
+              <li>
+                <span>Devilled lamb</span><strong>$16 / $23 / $28</strong>
+              </li>
+              <li>
+                <span>Devilled porkbelly</span><strong>$16 / $23 / $28</strong>
+              </li>
+              <li>
+                <span>Devilled shrimp</span><strong>$13 / $19 / $25</strong>
+              </li>
+            </ul>
+          </article>
+          <article class="menu-card menu-card--list">
+            <h3>Cutlets &amp; rolls</h3>
+            <p class="serving-size">
+              15-piece minimum · Add in increments of 5
+            </p>
+            <ul class="dish-list">
+              <li>
+                <span>Fish cutlets</span><strong>15: $16 · +5: $5</strong>
+              </li>
+              <li>
+                <span>Vegetable cutlets</span><strong>15: $15 · +5: $4</strong>
+              </li>
+              <li>
+                <span>Chicken cutlets</span><strong>15: $16 · +5: $5</strong>
+              </li>
+              <li><span>Egg rolls</span><strong>15: $20 · +5: $7</strong></li>
+              <li>
+                <span>Vegetable rolls</span><strong>15: $15 · +5: $4</strong>
+              </li>
+              <li><span>Fish rolls</span><strong>15: $21 · +5: $7</strong></li>
+              <li><span>Beef rolls</span><strong>15: $23 · +5: $8</strong></li>
+            </ul>
+          </article>
+          <article class="menu-card menu-card--list">
+            <h3>Sweets &amp; cakes</h3>
+            <p class="serving-size">
+              Available in ½ lb, 1 lb, or 2 lb portions
+            </p>
+            <ul class="dish-list">
+              <li><span>Watalappan</span><strong>$20 / $30 / $40</strong></li>
+              <li><span>Milk toffee</span><strong>$20 / $31 / $42</strong></li>
+              <li>
+                <span>Coconut toffee</span><strong>$21 / $31 / $42</strong>
+              </li>
+              <li>
+                <span>Potato toffee</span><strong>$20 / $31 / $42</strong>
+              </li>
+              <li>
+                <span>Pineapple toffee</span><strong>$20 / $31 / $42</strong>
+              </li>
+              <li>
+                <span>Fruit &amp; nut cake</span
+                ><strong>$25 / $32 / $42</strong>
+              </li>
+              <li><span>Date cake</span><strong>$10 / $16 / $25</strong></li>
+              <li><span>Love cake</span><strong>$20 / $30 / $40</strong></li>
+            </ul>
+          </article>
+          <article class="menu-card menu-card--list">
+            <h3>Planning an event?</h3>
+            <p>
+              Tell us your date, guest count, and the dishes you have in mind.
+              Gloria can help create a spread for your celebration.
+            </p>
+            <a href="#order">Start your order →</a>
           </article>
         </div>
       </section>
@@ -525,9 +824,41 @@
         <h2>Let's make something delicious for your next gathering.</h2>
         <p>
           Send the date, guest count, and what you're craving. Gloria will
-          confirm availability and the final total personally. Once confirmed,
-          you can pay securely through Venmo.
+          confirm availability and the final total personally. A minimum of five
+          days' notice is required. Full payment is required to place a
+          confirmed order.
         </p>
+        <div class="order-policies">
+          <div class="order-policy">
+            <strong
+              ><svg class="policy-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <path
+                  d="M3 6h11v10H3zM14 10h4l3 3v3h-7zM7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+                /></svg
+              >Delivery</strong
+            >
+            $5 delivery within 2 miles of ZIP code 90680. Orders outside this
+            radius are pickup only.
+          </div>
+          <div class="order-policy">
+            <strong
+              ><svg class="policy-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" /></svg
+              >Cancellations</strong
+            >
+            Cancel within 2 hours of placing your order for a full refund.
+          </div>
+          <div class="order-policy">
+            <strong
+              ><svg class="policy-icon" aria-hidden="true" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 11v5M12 8h.01" /></svg
+              >Please note</strong
+            >
+            Menu items and prices are subject to change.
+          </div>
+        </div>
         <div class="order-actions">
           <a
             class="button button--light"
@@ -542,18 +873,26 @@
             rel="noreferrer"
             >Pay with Venmo</a
           >
+          <a
+            class="button button--zelle"
+            href="https://www.zellepay.com/"
+            target="_blank"
+            rel="noreferrer"
+            >Pay with Zelle</a
+          >
         </div>
         <span class="order-note"
-          >Venmo is for confirmed orders only. Replace the sample WhatsApp
-          number and Venmo handle before going live.</span
+          >At least 5 days' notice is required. Full payment is due for
+          confirmed orders. Replace the sample WhatsApp number, Venmo handle,
+          and Zelle contact before going live.</span
         >
       </section>
     </main>
     <footer class="wrap">
       <p>© 2026 Gloria's Platter</p>
       <p>
-        Made for gatherings worth celebrating · Venmo accepted after order
-        confirmation
+        Made for gatherings worth celebrating · 5 days' notice and full payment
+        required after order confirmation
       </p>
     </footer>
   </body>
