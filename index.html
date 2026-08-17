@@ -142,11 +142,24 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1fr 0.95fr;
+      grid-template-columns: 1fr 0.55fr 0.95fr;
       min-height: 590px;
       background: var(--forest);
       color: #fff;
       overflow: hidden;
+    }
+
+    .hero-portrait {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .hero-copy {
@@ -859,7 +872,7 @@
         </div>
         <div class="brand-text">
           Gloria's Platter Catering
-          <span>Fresh Homemade Food</span>
+          <span>Fresh Homemade Food.</span>
         </div>
       </a>
       <nav>
@@ -874,12 +887,15 @@
         <span class="eyebrow">One Table. Many Nations. </span>
         <h1>Good food makes the platter.</h1>
         <p>
-          The ultimate international comfort food mashup is finally here. Our food will make you homesick for places you have never even been!
+          I started my YouTube channel, Gloria's Platter, to share my deep passion for cooking with the world, which quickly sparked endless requests to cater for viewers. After years of declining, my family finally rallied together to help me launch Gloria's Platter Catering and bring those digital dishes to life.
         </p>
         <div class="hero-actions">
           <a class="button" href="#menu">Explore the menu</a><a class="button button--light" href="#order">Order on
             WhatsApp</a>
         </div>
+      </div>
+      <div class="hero-portrait">
+        <img src="images/portrait.jpg" alt="Gloria, founder of Gloria's Platter Catering">
       </div>
       <div class="hero-image" role="img" aria-label="A catered spread of colorful dishes"></div>
     </section>
@@ -914,6 +930,7 @@
           <h2>Main Entrées &amp; Curries</h2>
         </div>
         <p>Generous rice, roti, hoppers, slow-simmered curries, and devilled dishes for your gathering.</p>
+        <p style="margin-top: 8px; font-weight: 500; color: var(--forest);">🌿 Vegetarian options available.</p>
       </div>
       <div class="menu-grid">
         <article class="menu-card menu-card--list">
@@ -977,7 +994,7 @@
                 <small>L</small>$24</strong>
             </li>
             <li>
-              <span>Vegetarian Sambar</span><strong><small>S</small>$8 · <small>M</small>$14 ·
+              <span>Vegetarian Sambar 🌿</span><strong><small>S</small>$8 · <small>M</small>$14 ·
                 <small>L</small>$19</strong>
             </li>
             <li>
@@ -1023,7 +1040,7 @@
                 <small>L</small>$26</strong>
             </li>
             <li>
-              <span>Cashew, Onion, Potato baduma</span><strong><small>S</small>$15 · <small>M</small>$23 ·
+              <span>Cashew, Onion, Potato baduma 🥜</span><strong><small>S</small>$15 · <small>M</small>$23 ·
                 <small>L</small>$30</strong>
             </li>
           </ul>
@@ -1049,21 +1066,21 @@
           </p>
           <ul class="dish-list">
             <li>
-              <span>Stir-fried potatoes</span><strong><small>½c</small>$6 · <small>1c</small>$11 ·
+              <span>Stir-fried potatoes 🌿</span><strong><small>½c</small>$6 · <small>1c</small>$11 ·
                 <small>1.5c</small>$16</strong>
             </li>
             <li>
-              <span>Stir-fried green beans</span><strong><small>½c</small>$6 · <small>1c</small>$11 ·
+              <span>Stir-fried green beans 🌿</span><strong><small>½c</small>$6 · <small>1c</small>$11 ·
                 <small>1.5c</small>$16</strong>
             </li>
             <li>
-              <span>Stir-fried kangkung</span><strong><small>½c</small>$6 · <small>1c</small>$11 ·
+              <span>Stir-fried kangkung 🌿</span><strong><small>½c</small>$6 · <small>1c</small>$11 ·
                 <small>1.5c</small>$16</strong>
             </li>
-            <li><span>Dahl curry</span><strong><small>½c</small>$5 · <small>1c</small>$10 ·
+            <li><span>Dahl curry 🌿</span><strong><small>½c</small>$5 · <small>1c</small>$10 ·
                 <small>1.5c</small>$15</strong></li>
             <li>
-              <span>White potato curry</span><strong><small>½c</small>$6 · <small>1c</small>$11 ·
+              <span>White potato curry 🌿</span><strong><small>½c</small>$6 · <small>1c</small>$11 ·
                 <small>1.5c</small>$16</strong>
             </li>
             <li>
@@ -1081,7 +1098,7 @@
                 <small>1.5c</small>$15</strong>
             </li>
             <li>
-              <span>Vegetable Soup</span><strong><small>½c</small>$9 · <small>1c</small>$15 ·
+              <span>Vegetable Soup 🌿</span><strong><small>½c</small>$9 · <small>1c</small>$15 ·
                 <small>1.5c</small>$20</strong>
             </li>
             <li>
@@ -1105,7 +1122,7 @@
               <span>Fish cutlets</span><strong><small>15</small>$16 · <small>+5</small>$5</strong>
             </li>
             <li>
-              <span>Vegetable cutlets</span><strong><small>15</small>$15 · <small>+5</small>$4</strong>
+              <span>Vegetable cutlets 🌿</span><strong><small>15</small>$15 · <small>+5</small>$4</strong>
             </li>
             <li>
               <span>Patties</span><strong><small>15</small>$16 · <small>+5</small>$5</strong>
@@ -1119,9 +1136,9 @@
             </li>
             <li><span>Fish rolls</span><strong><small>15</small>$21 · <small>+5</small>$7</strong></li>
             <li><span>Beef rolls</span><strong><small>15</small>$23 · <small>+5</small>$8</strong></li>
-            <li><span>Dahl Wadei / Vada</span><strong><small>15</small>$16 · <small>+5</small>$5</strong></li>
+            <li><span>Dahl Wadei / Vada 🌿</span><strong><small>15</small>$16 · <small>+5</small>$5</strong></li>
             <li><span>Shrimp Wadei / Vada</span><strong><small>15</small>$17 · <small>+5</small>$6</strong></li>
-            <li><span>Vegetable Stuffed Banana Peppers</span><strong><small>15</small>$20 · <small>+5</small>$8</strong>
+            <li><span>Vegetable Stuffed Banana Peppers 🌿</span><strong><small>15</small>$20 · <small>+5</small>$8</strong>
             </li>
             <li><span>Fish Stuffed Banana Peppers</span><strong><small>15</small>$23 · <small>+5</small>$9</strong></li>
           </ul>
@@ -1172,14 +1189,16 @@
           <h3>🍹 Drinks &amp; Refreshers</h3>
           <p class="serving-size">
             Traditional Sri Lankan &amp; tropical beverages (Available by the Glass, Pitcher, or Gallon)
+            <br>
+            <span style="color: var(--forest); font-weight: 500;">🥛 Contains Dairy / Milk-based</span>
           </p>
           <ul class="dish-list"
             style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 24px;">
-            <li><span>Falooda</span><strong><small>Glass</small>$6 · <small>Pitcher</small>$18 ·
+            <li><span>Falooda 🥛</span><strong><small>Glass</small>$6 · <small>Pitcher</small>$18 ·
                 <small>Gal</small>$32</strong></li>
-            <li><span>Sri Lankan Iced Coffee</span><strong><small>Glass</small>$6 · <small>Pitcher</small>$18 ·
+            <li><span>Sri Lankan Iced Coffee 🥛</span><strong><small>Glass</small>$6 · <small>Pitcher</small>$18 ·
                 <small>Gal</small>$32</strong></li>
-            <li><span>Mango Lassi</span><strong><small>Glass</small>$6 · <small>Pitcher</small>$18 ·
+            <li><span>Mango Lassi 🥛</span><strong><small>Glass</small>$6 · <small>Pitcher</small>$18 ·
                 <small>Gal</small>$32</strong></li>
           </ul>
         </article>
@@ -1207,7 +1226,7 @@
       </div>
       <div class="bundle-grid">
         <!-- Meal 1: Rice & Curry Packet -->
-        <article class="bundle-card bundle-card--featured">
+        <article class="bundle-card">
           <span class="bundle-badge">🍱 Individual Meal Box</span>
           <h3>Rice &amp; Curry Packet</h3>
           <div class="bundle-price">
@@ -1234,7 +1253,7 @@
         </article>
 
         <!-- Meal 2: Coconut Milk Rice Meal -->
-        <article class="bundle-card">
+        <article class="bundle-card bundle-card--featured">
           <span class="bundle-badge">🥥 Meal Set</span>
           <h3>Coconut Milk Rice Meal</h3>
           <div class="bundle-price">
@@ -1280,7 +1299,7 @@
         <!-- Meal 4: Noodles Meal (Feeds 2) -->
         <article class="bundle-card">
           <span class="bundle-badge">🍜 Feeds 2 People</span>
-          <h3>Vegetable Noodles Meal</h3>
+          <h3>Vegetable Noodles Meal 🌿</h3>
           <div class="bundle-price">
             <span class="price-amount">$19</span> <small>/ meal set</small>
             <span class="min-order">Min. order: 3 meals</span>
@@ -1409,7 +1428,7 @@
               <circle cx="12" cy="12" r="9" />
               <path d="M12 11v5M12 8h.01" />
             </svg>Please note</strong>
-          Menu items and prices are subject to change.
+          Menu items and prices are subject to change. Prices are locked in once you place the order.
         </div>
       </div>
       <div class="order-actions">
@@ -1420,9 +1439,6 @@
         <a class="button button--zelle" href="https://www.zellepay.com/" target="_blank" rel="noreferrer">Pay with
           Zelle</a>
       </div>
-      <span class="order-note">At least 5 days' notice is required. Full payment is due for
-        confirmed orders. Replace the sample WhatsApp number, Venmo handle,
-        and Zelle contact before going live.</span>
     </section>
   </main>
   <footer class="wrap">
