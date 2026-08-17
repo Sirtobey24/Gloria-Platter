@@ -794,49 +794,124 @@
     }
 
     @media (max-width: 760px) {
+      /* Nav: hide links, keep order button */
       nav a:not(.button) {
         display: none;
       }
 
-      .hero,
-      .feature {
+      /* Hero: stack vertically, hide portrait on small screens */
+      .hero {
         grid-template-columns: 1fr;
+        min-height: unset;
+      }
+
+      .hero-portrait {
+        display: none;
       }
 
       .hero-copy {
-        padding: 75px 30px;
+        padding: 52px 24px 44px;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 8vw, 3.2rem);
+        margin: 12px 0 18px;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+        max-width: 100%;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
       }
 
       .hero-image {
-        min-height: 310px;
+        min-height: 260px;
       }
 
+      /* How-to steps */
       .how {
         grid-template-columns: 1fr;
         gap: 20px;
       }
 
+      /* Grids go single column */
       .steps,
       .menu-grid,
+      .bundle-grid,
       .order-policies {
         grid-template-columns: 1fr;
       }
 
+      /* Feature section */
+      .feature {
+        grid-template-columns: 1fr;
+      }
+
+      /* Section spacing */
+      section {
+        padding: 52px 0;
+      }
+
+      /* Section headings */
       .section-top {
         display: block;
       }
 
       .section-top p {
-        margin-top: 16px;
+        margin-top: 14px;
       }
 
+      h2 {
+        font-size: clamp(1.8rem, 6vw, 2.4rem);
+      }
+
+      /* Menu cards */
+      .menu-card {
+        padding: 22px 18px;
+      }
+
+      /* Bundle / meal packet cards */
+      .bundle-card {
+        padding: 24px 18px;
+      }
+
+      .bundle-grid {
+        gap: 16px;
+      }
+
+      /* Logo sizing on mobile */
+      .logo-wrapper {
+        width: 52px;
+        height: 52px;
+      }
+
+      .brand-text {
+        font-size: 1.1rem;
+      }
+
+      /* Drinks card */
+      .drinks-card-wrap article {
+        padding: 22px 18px;
+      }
+
+      /* Gallery */
       .gallery {
         grid-template-columns: 1fr 1fr;
       }
 
       .gallery img,
       .gallery img:first-child {
-        height: 250px;
+        height: 200px;
       }
 
       .gallery img:first-child {
@@ -847,10 +922,27 @@
         margin-top: 0;
       }
 
-      section {
-        padding: 66px 0;
+      /* Order section */
+      .order {
+        padding: 60px 20px;
       }
 
+      .order-policies {
+        gap: 10px;
+      }
+
+      .order-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .order-actions .button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      /* Footer */
       footer {
         display: block;
       }
