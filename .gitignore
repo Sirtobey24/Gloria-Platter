@@ -1,0 +1,13 @@
+# macOS Finder metadata
+.DS_Store
+
+# Local secrets and environment settings
+.env
+.env.*
+
+# Future JavaScript dependencies and build output
+node_modules/
+dist/
+
+# Personal working notes
+IMPLEMENTATION_PLAN.md
